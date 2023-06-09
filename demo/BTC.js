@@ -58,10 +58,12 @@ function calBTC(currency_amount, currency_type){
 }
 
 // Get input currency type and currency amount to calculate number of BTC
-reader.question("Please enter currency type (USD, GBP, EUR) : ", currency_type => {
-    reader.question("Please enter currency amount : ", currency_amount => {
-        calBTC(parseFloat(currency_amount), currency_type)
+setTimeout(() => {
+    reader.question("Please enter currency type (USD, GBP, EUR) : ", currency_type => {
+        reader.question("Please enter currency amount : ", currency_amount => {
+            calBTC(parseFloat(currency_amount), currency_type)
+        })
     })
-})
+  }, 1000*3)
 
 requestBitcoinRate();
